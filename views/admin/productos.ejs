@@ -2,11 +2,15 @@
 <%- include("templates/nav") %>
 <main>
     <h2>PRODUCTOS</h2>
+    <a class="btn btn-primary" href="/admin/crearProducto">Crear producto</a>
+
     <table class="table table-striped">
         <thead>
             <tr>
                 <th scope="col">NOMBRE</th>
                 <th scope="col">DESCRIPCION</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
             </tr>
         </thead>
         <tbody>
@@ -15,6 +19,14 @@
                     <tr scope="row">
                         <td><%= producto.nombre %></td>
                         <td><%= producto.descripcion %></td>
+                        <td>
+                            <a class="btn btn-warning" href="/admin/actualizarProducto/<%= producto._id %>">Actualizar</a>
+                        </td>
+                        <td>
+                            <form action="/admin/eliminarProducto/<%= producto._id %>" method="POST">
+                                <button type="submit" class="btn btn-danger">Eliminar</button>
+                            </form>
+                        </td>
                     </tr>
                 <% }) %>
             <% } else { %>

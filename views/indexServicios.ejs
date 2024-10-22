@@ -1,7 +1,7 @@
 <%- include("templates/header") %>
 <%- include("templates/nav") %>
 <main>
-    <h2>PRODUCTOS</h2>
+    <h2>SERVICIOS</h2>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -10,16 +10,16 @@
             </tr>
         </thead>
         <tbody>
-            <% if (productos.data.length > 0) { %>
-                <% productos.data.forEach(producto => { %>
+            <% if (servicios.data.length > 0) { %>
+                <% servicios.data.forEach(servicio => { %>
                     <tr scope="row">
-                        <td><%= producto.nombre %></td>
-                        <td><%= producto.descripcion %></td>
+                        <td><%= servicio.nombre %></td>
+                        <td><%= servicio.descripcion %></td>
                     </tr>
                 <% }) %>
             <% } else { %>
                 <tr>
-                    <td>No hay productos disponibles.</td>
+                    <td>No hay servicios disponibles.</td>
                 </tr>
             <% } %>
         </tbody>

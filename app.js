@@ -1,9 +1,14 @@
 /* IMPORTAR MODULOS */
 const express = require("express");
 require('dotenv').config();
+const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 4000;
 const publicRouter = require("./routers/publicRouter");
+const adminRouter = require("./routers/adminRouter");
+
+/* CORS */
+app.use(cors());
 
 /* BODY PARSER */
 app.use(express.json());

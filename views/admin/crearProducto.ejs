@@ -1,0 +1,18 @@
+<%- include("templates/header") %>
+<%- include("templates/nav") %>
+<main>
+    <h2>Crear Producto</h2>
+    <form action="/admin/crearProducto" method="POST">
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre">
+        </div>
+        <div class="mb-3">
+            <label for="descripcion" class="form-label">Descripción</label>
+            <input type="text" class="form-control" id="descripcion" name="descripcion">
+        </div>
+        <button type="submit" class="btn btn-primary">Crear</button>
+        <a href="/admin/productos" class="btn btn-secondary">Cancelar</a>
+    </form>
+</main>
+<%- include("templates/footer") %>

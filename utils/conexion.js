@@ -1,3 +1,12 @@
+/**
+ * Función asincrónica para realizar peticiones a API Mongo.
+ * 
+ * @param {string} url - Ruta para la petición.
+ * @param {string} [method="get"] - Método HTTP a utilizar (por defecto, "get").
+ * @param {object} [body={}] - Datos a enviar en caso de que haya (PUT o POST).
+ * @returns {Promise<object>} - Respuesta de la API en formato JSON.
+ * @throws {Error} - Lanza un error si la petición falla.
+ */
 const conexion = async (url, method = "get", body = {}) => {
     try {
         const urlBase = process.env.URL_BASE;
@@ -7,7 +16,7 @@ const conexion = async (url, method = "get", body = {}) => {
                 'Content-Type': 'application/json'
             }
         }
-        if (method !== "get") opciones.body = JSON.stringify(body);
+        if (method === "put" || method === "post") opciones.body = JSON.stringify(body);
         console.log("entrando en conexion")
         const resp = await fetch(`${urlBase}/${url}`, opciones);
         //console.log(resp)
