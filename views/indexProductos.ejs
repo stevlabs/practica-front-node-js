@@ -1,0 +1,22 @@
+<%- include("templates/header") %>
+<%- include("templates/nav") %>
+<main>
+    <h2>PRODUCTOS</h2>
+    <table class="table able-striped">
+        <thead>
+            <tr>
+                <th scope="col">NOMBRE</th>
+                <th scope="col">DESCRIPCION</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% productos.data.forEach(producto => { %>
+                <tr scope="row">
+                    <td><%= producto.nombre %></td>
+                    <td><%= producto.descripcion %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</main>
+<%- include("templates/footer") %>
